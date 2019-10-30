@@ -204,7 +204,7 @@ my $dsn = "dbi:$driver:dbname=$dbname";
 $dsn .= ";host=$dbhost";
 $dsn .= ";port=$port";
 
-my $schema= Bio::Chado::Schema->connect($dsn, $user, $pass||'');
+my $schema= Bio::Chado::Schema->connect($dsn, $user, $pass||'', {AutoCommit => 1});
 
 if (!$schema) { die "No schema is avaiable! \n"; }
 
